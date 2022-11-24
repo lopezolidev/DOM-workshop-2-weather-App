@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/sergioiscoding/DOM-workshop-2-weather-App/issues"
   },
-  "homepage": "https://github.com/sergioiscoding/DOM-workshop-2-weather-App#readme"
+  "homepage": "https://github.com/sergioiscoding/DOM-workshop-2-weather-App#readme",
+  "dependencies": {
+    "node-fetch": "^3.3.0"
+  },
+  "type": "module"
 }
