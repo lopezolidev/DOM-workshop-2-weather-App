@@ -1,0 +1,24 @@
+{
+  "name": "weather-app-dom-manipulation",
+  "description": "DOM-workshop-app-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "node-sass": "^8.0.0",
+    "sass": "^1.56.1"
+  },
+  "scripts": {
+    "sass-dev": "sass --watch --update --style=expanded src/assets/scss:src/assets/css",
+    "sass-prod": "sass --no-source-map --style=compressed src/assets/scss:src/assets/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergioiscoding/DOM-workshop-2-weather-App.git"
+  },
+  "author": "Sergio Javier Lopez Olivera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergioiscoding/DOM-workshop-2-weather-App/issues"
+  },
+  "homepage": "https://github.com/sergioiscoding/DOM-workshop-2-weather-App#readme"
+}

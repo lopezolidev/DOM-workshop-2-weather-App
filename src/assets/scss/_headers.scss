@@ -1,0 +1,34 @@
+
+//header
+
+header {
+    width: 100%;
+    height: 16rem;
+    background-color: $Background-color;
+    color: $text-color;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    h1{
+        font-size: $title-size;
+        span { //nesting elements inside a parent label
+            height: 2rem;
+            width: 2rem;
+        }
+    }
+    .header-info {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        h3 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: $text-size;
+        }
+    }
+}

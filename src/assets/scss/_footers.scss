@@ -1,0 +1,14 @@
+//footer
+
+footer {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $Background-color;
+    color: $text-color;
+    p {
+        font-size: 1.6rem;
+    }
+}

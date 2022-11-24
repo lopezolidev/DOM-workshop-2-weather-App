@@ -1,0 +1,17 @@
+//variables
+$Font-1: 'Roboto', sans-serif; //thin:100 / regular:400
+$Background-color: white;
+$text-color:rgb(0, 0, 54);
+$title-size: 2rem;
+$text-size: 1.6rem;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: $Font-1;
+}
