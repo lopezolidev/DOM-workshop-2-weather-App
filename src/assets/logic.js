@@ -1,6 +1,3 @@
-import { createCipheriv } from "crypto";
-import fetch from "node-fetch";
-
 //Tasks:
 //1 - initialize variables for API and DOM elements
 //2 - set-up basic events that the DOM will trigger
@@ -9,16 +6,24 @@ import fetch from "node-fetch";
 //3.1 - create DOM nodes with classes
 //3.2 - build logic to render card with user input (city)
 
-const API = "http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=46326a6829dc87953c417b28d2a4194a"
+//input event:
+const input = document.querySelector('#input');
 
-async function fetchData(api){
+const submitButton = document.querySelector('#button')
+
+
+async function fetchData(country){
    try{
-        const raw = await fetch(api);
-        const parsed = await raw.json();
-        console.log(parsed)
-   } catch(e) {
+         const location = country.toUpperCase();
+         console.log(location);
+         const raw = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=46326a6829dc87953c417b28d2a4194a&units=metric`);
+         const parsed = await raw.json();
+         console.log(parsed)
+      } catch(e) {
     throw new Error(e);
    }
 }
 
-fetchData(API);
+submitButton.addEventListener('click', fetchData)
+
+// fetchData('caracas');
