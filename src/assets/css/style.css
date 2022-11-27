@@ -80,7 +80,12 @@ main form button {
   background-color: rgb(0, 0, 54);
   color: white;
 }
-main .card-container {
+main .cards-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+main .cards-section .card-container {
   height: 36rem;
   width: 20rem;
   padding: 1.6rem;
@@ -96,14 +101,14 @@ main .card-container {
   -webkit-box-shadow: 10px 10px 4px -3px rgba(0, 0, 0, 0.26);
   -moz-box-shadow: 10px 10px 4px -3px rgba(0, 0, 0, 0.26);
 }
-main .card-container .card-top {
+main .cards-section .card-container .card-top {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 1.8rem;
 }
-main .card-container .card-top span {
+main .cards-section .card-container .card-top span {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -113,21 +118,21 @@ main .card-container .card-top span {
   height: 3rem;
   color: rgb(0, 0, 54);
 }
-main .card-container .card-degrees {
+main .cards-section .card-container .card-degrees {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 6rem;
   font-weight: 400;
 }
-main .card-container .card-climate {
+main .cards-section .card-container .card-climate {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 8rem;
   width: 8rem;
 }
-main .card-container .card-description {
+main .cards-section .card-container .card-description {
   font-size: 1.6rem;
 }
 
