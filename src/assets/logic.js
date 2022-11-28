@@ -20,7 +20,7 @@ const page = document.querySelector('.cards-section')
 
 const cardsArray = [];
 
-const iconArray = []; //TO-DO
+const iconArray = []; 
 
 async function fetchData(e){
    try{
@@ -36,7 +36,7 @@ async function fetchData(e){
          const parsed = await raw.json();
          //parsing in json() raw weater data
 
-         // console.log(parsed)
+         // console.log(parsed.weather[0])
 
          //=====================Let's create HTML nodes
 
@@ -95,52 +95,76 @@ async function fetchData(e){
          cardTitle.innerText = parsed.name;
          //city name
 
-         //ICON → Later in CSS insert ICON
+         deleteIcon.innerText = 'X'; 
+         //icon symbol
          deleteIcon.addEventListener('click', deleteCard)
+         //adding event of card deletion
 
          degrees.innerText = parsed.main.temp
          //city degrees
 
-         //CLIMATE ICON → LATER 
+         const climate = parsed.weather[0].main.toLowerCase();
+         imageSelect(climate, climateIcon);
+         //pushing weather code to array of icons  
          //climate icon
 
          climateDescription.innerText = parsed.weather[0].description;
          //climate description
 
-         const result = isAppended(wrapper);
-         //storing result from isAppended function using wrapper as our argument
+         const proof = cardsArray.some(i => i.children[0].children[0].innerText === wrapper.children[0].children[0].innerText)
+         //this part sometimes work, sometimes doesn't
 
-         appendCard(result, wrapper);
-         //appendCard will use the result and the wrapper element for validation and insert the element in the DOM
+
+         if(proof){
+            return;
+         } else {
+            cardsArray.push(wrapper);
+            //pushing elements inside the cardsArray
+
+            page.append(wrapper);
+            //appending such element in the page
+
+            // console.log(cardsArray)
+         }
+         // console.log(cardsArray.some(i => i == wrapper));
+         // // const result = isAppended(wrapper);
+         // // const result = isAppended();
+         // // console.log(isAppended)
+         // // console.log(result)
+         // //storing result from isAppended function using wrapper as our argument
+
+         // appendCard(cardsArray.some(i => i.children[0].innerText == wrapper.children[0].innerText), wrapper);
+         // //appendCard will use the result and the wrapper element for validation and insert the element in the DOM
          
+         // // console.log(iconArray)
 
       } catch(e) {
     throw new Error(e);
    }
 }
 
-function isAppended(arg){
-   return cardsArray.some(i => i.children[0].innerText == arg.children[0].innerText);
+// function isAppended(arg){
+//    return cardsArray.some(i => i.children[0].innerText == arg.children[0].innerText);
 
-   //arg.then(e => e.children[0].innerText)
+//    //arg.then(e => e.children[0].innerText)
 
-   //as arg is wrapper, children stands for the HTML elements array and [0] is the cardTitle element. innerText is the object of comparison with any element that already exists inside the cards array
-}
-//isAppended function will return true if there's at least one element equal to those in the array
+//    //as arg is wrapper, children stands for the HTML elements array and [0] is the cardTitle element. innerText is the object of comparison with any element that already exists inside the cards array
+// }
+// //isAppended function will return true if there's at least one element equal to those in the array
 
-function appendCard(proof, element){
-   if(proof){
-      return;
-   } else {
-      cardsArray.push(element);
-      //pushing elements inside the cardsArray
+// function appendCard(proof, element){
+//    if(proof){
+//       return;
+//    } else {
+//       cardsArray.push(element);
+//       //pushing elements inside the cardsArray
 
-      page.append(element);
-      //appending such element in the page
+//       page.append(element);
+//       //appending such element in the page
 
-      console.log(cardsArray)
-   }
-}
+//       // console.log(cardsArray)
+//    }
+// }
 //appendCard function will take as argument isAppended function to validate the presence of a card already pushed to the array of cards to decide if its appended to the container or not
 
 function deleteCard(e){
@@ -155,6 +179,19 @@ function deleteCard(e){
 
    e.path[2].remove();
    //removing card using path[2], referencing the whole card
+}
+
+function imageSelect(item, span){
+   if(iconArray.some(i => i == item)){
+      return;
+   } else{
+      
+   iconArray.push(item);
+   //conditional to not repeat climates 
+
+   span.className = item
+   //creating classes for span
+   }
 }
 
 submitButton.addEventListener('click', fetchData)

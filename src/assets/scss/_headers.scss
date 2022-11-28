@@ -13,9 +13,10 @@ header {
     align-items: center;
     h1{
         font-size: $title-size;
-        span { //nesting elements inside a parent label
-            height: 2rem;
-            width: 2rem;
+        .app-image { //nesting elements inside a parent label
+            background-image: url('https://img.icons8.com/ios/100/000036/sun--v1.png');
+            //image doesn't display, don't know how to solve it
+            @include image-styles(3rem)
         }
     }
     .header-info {
@@ -29,6 +30,15 @@ header {
             align-items: center;
             gap: 0.8rem;
             font-size: $text-size;
+            a {
+                @include image-styles(3.6rem)
+            }
+            .weather-app-img{
+                background-image: url('https://img.icons8.com/ios/100/000036/partly-cloudy-day--v1.png');    
+            }
+            .github-acc{
+                background-image: url('https://img.icons8.com/ios/100/000036/github--v1.png');
+            }
         }
     }
 }

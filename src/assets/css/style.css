@@ -23,9 +23,13 @@ header {
 header h1 {
   font-size: 2rem;
 }
-header h1 span {
-  height: 2rem;
-  width: 2rem;
+header h1 .app-image {
+  background-image: url("https://img.icons8.com/ios/100/000036/sun--v1.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 3rem;
+  width: 3rem;
 }
 header .header-info {
   display: flex;
@@ -39,6 +43,19 @@ header .header-info h3 {
   align-items: center;
   gap: 0.8rem;
   font-size: 1.6rem;
+}
+header .header-info h3 a {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 3.6rem;
+  width: 3.6rem;
+}
+header .header-info h3 .weather-app-img {
+  background-image: url("https://img.icons8.com/ios/100/000036/partly-cloudy-day--v1.png");
+}
+header .header-info h3 .github-acc {
+  background-image: url("https://img.icons8.com/ios/100/000036/github--v1.png");
 }
 
 main {
@@ -131,6 +148,19 @@ main .cards-section .card-container .card-climate {
   align-items: center;
   height: 8rem;
   width: 8rem;
+}
+main .cards-section .card-container .card-climate span {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 8rem;
+  width: 8rem;
+}
+main .cards-section .card-container .card-climate .clouds {
+  background-image: url("https://img.icons8.com/ios/100/FFFFFF/cloud.png");
+}
+main .cards-section .card-container .card-climate .rain {
+  background-image: url("https://img.icons8.com/ios/100/FFFFFF/rain--v1.png");
 }
 main .cards-section .card-container .card-description {
   font-size: 1.6rem;

@@ -5,6 +5,34 @@ $text-color:rgb(0, 0, 54);
 $title-size: 2rem;
 $text-size: 1.6rem;
 
+
+    $sunny: 'https://img.icons8.com/ios/100/FFFFFF/sun--v1.png';
+    $sunny2: 'https://img.icons8.com/ios/100/000036/sun--v1.png';
+    $partly-cloudy: 'https://img.icons8.com/ios/100/FFFFFF/partly-cloudy-day--v1.png';
+    $cloudy: "https://img.icons8.com/ios/100/FFFFFF/cloud.png";
+    $light-rain:'https://img.icons8.com/ios/100/FFFFFF/light-rain--v1.png';
+    $rain: 'https://img.icons8.com/ios/100/FFFFFF/rain--v1.png';
+    $heavy-rain: 'https://img.icons8.com/ios/100/FFFFFF/intense-rain.png';
+    $torrential-rain:'https://img.icons8.com/ios/100/FFFFFF/torrential-rain--v1.png';
+    $rain-cloud:'https://img.icons8.com/ios/100/FFFFFF/partly-cloudy-rain--v1.png';
+    $foggy: 'https://img.icons8.com/ios/100/FFFFFF/fog-day--v1.png';
+    $windy: 'https://img.icons8.com/ios/100/FFFFFF/windy-weather--v1.png';
+    $light-snow: 'https://img.icons8.com/ios/100/FFFFFF/light-snow--v1.png';
+    $snow: 'https://img.icons8.com/ios/100/FFFFFF/snow.png';
+    $hail: 'https://img.icons8.com/ios/100/FFFFFF/hail.png';
+//climate conditions
+
+
+@mixin image-styles($size){
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: $size;
+    width: $size;
+}
+//using mixins for images at header and on each card
+
+
 * {
     box-sizing: border-box;
     margin: 0;
