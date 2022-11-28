@@ -162,6 +162,15 @@ main .cards-section .card-container .card-climate .clouds {
 main .cards-section .card-container .card-climate .rain {
   background-image: url("https://img.icons8.com/ios/100/FFFFFF/rain--v1.png");
 }
+main .cards-section .card-container .card-climate .drizzle {
+  background-image: url("https://img.icons8.com/ios/100/FFFFFF/light-rain--v1.png");
+}
+main .cards-section .card-container .card-climate .clear {
+  background-image: url("https://img.icons8.com/ios/100/FFFFFF/sun--v1.png");
+}
+main .cards-section .card-container .card-climate .snow {
+  background-image: url("https://img.icons8.com/ios/100/FFFFFF/snow.png");
+}
 main .cards-section .card-container .card-description {
   font-size: 1.6rem;
 }

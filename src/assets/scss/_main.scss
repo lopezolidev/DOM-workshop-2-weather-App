@@ -88,14 +88,26 @@ main {
                 height: 8rem;
                 width: 8rem;
                 span{
-                    @include image-styles(8rem);
+                    @include image-styles(8rem)
                 }
-                .clouds{
-                    background-image: url($cloudy);
-                }
-                .rain{
-                    background-image: url($rain);
-                }
+                    .clouds{
+                        background-image: url($cloudy);
+                    }
+                    .rain{
+                        background-image: url($rain);
+                    }
+                    .drizzle {
+                        background-image: url($drizzle);
+                    }
+                    .clear {
+                        background-image: url($sunny)
+                    }
+                    .snow{
+                        background-image: url($snow);
+                    }
+                // span{
+                //     @include image-styles(8rem);
+                // }
             }
             .card-description {
                 font-size: 1.6rem;

@@ -7,7 +7,7 @@
 //3.2 - build logic to render card with user input (city) ← DONE
 //4 - build logic check for repeated cards ← DONE
 //5 - delete card logic ← DONE
-//6 - add styles to app design ← TO-DO
+//6 - add styles to app design ← DONE
 
 
 //input event:
@@ -104,9 +104,10 @@ async function fetchData(e){
          //city degrees
 
          const climate = parsed.weather[0].main.toLowerCase();
+         //selecting climate code
+
          imageSelect(climate, climateIcon);
          //pushing weather code to array of icons  
-         //climate icon
 
          climateDescription.innerText = parsed.weather[0].description;
          //climate description
@@ -124,20 +125,8 @@ async function fetchData(e){
             page.append(wrapper);
             //appending such element in the page
 
-            // console.log(cardsArray)
          }
-         // console.log(cardsArray.some(i => i == wrapper));
-         // // const result = isAppended(wrapper);
-         // // const result = isAppended();
-         // // console.log(isAppended)
-         // // console.log(result)
-         // //storing result from isAppended function using wrapper as our argument
-
-         // appendCard(cardsArray.some(i => i.children[0].innerText == wrapper.children[0].innerText), wrapper);
-         // //appendCard will use the result and the wrapper element for validation and insert the element in the DOM
          
-         // // console.log(iconArray)
-
       } catch(e) {
     throw new Error(e);
    }
@@ -173,24 +162,33 @@ function deleteCard(e){
 
    const indexOfElement = cardsArray.findIndex(i => i.children[0].children[0].innerText == elementName)
    //knowing which is the index of the card that triggered the event
+   
+   const iconName = e.target.parentElement.parentElement.children[2].children[0].className
+   //getting icon name for selecting its index in their array
 
+   const indexOfIcon = cardsArray.findIndex(i => i.children[2].children[0].className == iconName)
+   //indexOfIcon will be used to erase icon reference in its array
+   
    cardsArray.splice(indexOfElement, 1)
-   //eliminating card of the array, to erase the reference
+   // //eliminating card of the array, to erase the reference
+
+   iconArray.splice(indexOfIcon, 1);
+   //erasing icon reference in the array
 
    e.path[2].remove();
    //removing card using path[2], referencing the whole card
+
+
 }
 
 function imageSelect(item, span){
-   if(iconArray.some(i => i == item)){
-      return;
-   } else{
-      
-   iconArray.push(item);
-   //conditional to not repeat climates 
 
    span.className = item
    //creating classes for span
+
+   if(!iconArray.some(i => i == item)){
+      iconArray.push(item);
+      return;
    }
 }
 
